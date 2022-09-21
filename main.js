@@ -2,6 +2,7 @@ import './style.scss';
 import * as bootstrap from 'bootstrap';
 import Typed from 'typed.js';
 import ScrollReveal from "scrollreveal";
+import "waypoints/lib/noframework.waypoints.min";
 
 let options = {
     strings: ['Food ...', 'Drink ...'],
@@ -105,3 +106,55 @@ menuLists.forEach(list=>{
         `;
     menuRow.append(div);
 })
+
+let height = window.innerHeight;
+let nav = document.querySelector(".navbar")
+window.addEventListener("scroll",e=>{
+    let currentHeight = e.path[1].pageYOffset;
+    if(currentHeight>height)
+    {
+        nav.classList.add("scroll-nav");
+    }else
+    {
+        nav.classList.remove("scroll-nav");
+    }
+})
+
+new Waypoint({
+    element: document.getElementById('home-content'),
+    handler: function(direction) {
+        let oldNavLink = document.querySelector(".nav-link.active");
+        if(oldNavLink != null){
+            oldNavLink.classList.remove("active");
+        }
+        let currentNavLink = document.querySelector(`[href="#home"]`);
+        currentNavLink.classList.add('active');
+    },
+    offset: "10%"
+});
+
+let sections = ['about','service','menu'];
+sections.forEach(function (section){
+    new Waypoint({
+        element: document.getElementById(section),
+        handler: function(direction) {
+            let oldNavLink = document.querySelector(".nav-link.active");
+            oldNavLink.classList.remove("active");
+            let currentNavLink = document.querySelector(`[href="#${section}"]`);
+            currentNavLink.classList.add('active');
+        },
+        offset: "0%"
+    })
+})
+new Waypoint({
+    element: document.getElementById('contact'),
+    handler: function(direction) {
+        let oldNavLink = document.querySelector(".nav-link.active");
+        oldNavLink.classList.remove("active");
+        let currentNavLink = document.querySelector(`[href="#contact"]`);
+        console.log(currentNavLink)
+        currentNavLink.classList.add('active');
+    },
+    offset: "70%"
+})
+
