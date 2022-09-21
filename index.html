@@ -1,4 +1,7 @@
 <!doctype html>
+<div class="loader-container">
+    <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+</div>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,40 +9,117 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Foodie</title>
+    <link rel="icon" href="public/img/icon.png">
 </head>
+<style>
+    .loader-container{
+        position: fixed;
+        z-index: 15;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+    }
+    .lds-ellipsis {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+    }
+    .lds-ellipsis div {
+        position: absolute;
+        top: 33px;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background: #117b29;
+        animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    }
+    .lds-ellipsis div:nth-child(1) {
+        left: 8px;
+        animation: lds-ellipsis1 0.6s infinite;
+    }
+    .lds-ellipsis div:nth-child(2) {
+        left: 8px;
+        animation: lds-ellipsis2 0.6s infinite;
+    }
+    .lds-ellipsis div:nth-child(3) {
+        left: 32px;
+        animation: lds-ellipsis2 0.6s infinite;
+    }
+    .lds-ellipsis div:nth-child(4) {
+        left: 56px;
+        animation: lds-ellipsis3 0.6s infinite;
+    }
+    @keyframes lds-ellipsis1 {
+        0% {
+            transform: scale(0);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    @keyframes lds-ellipsis3 {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(0);
+        }
+    }
+    @keyframes lds-ellipsis2 {
+        0% {
+            transform: translate(0, 0);
+        }
+        100% {
+            transform: translate(24px, 0);
+        }
+    }
+
+</style>
 <body>
 <!-- Navbar -->
-<div class="container">
-    <nav class="navbar navbar-expand-lg bg-white ">
-        <div class="container-fluid">
-            <a class="navbar-brand d-flex align-items-center " href="#">
-                <img src="./public/img/icon.png" height="40" alt="">
-                <span class="fw-bolder ps-2">Foodie</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav nav-pills ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#service">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#menu">Menus</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact">Contact</a>
-                    </li>
-                </ul>
+<div class="container-fluid">
+    <div class="row">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 px-0">
+                    <nav class="navbar d-flex align-items-center navbar-expand-lg bg-white ">
+                        <div class="container">
+                            <a class="navbar-brand d-flex align-items-center " href="#">
+                                <img src="./public/img/icon.png" height="40" alt="">
+                                <span class="fw-bolder ps-2">Foodie</span>
+                            </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav nav-pills ms-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link home" aria-current="page" href="#home">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link about" href="#about">About</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link service" href="#service">Services</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu" href="#menu">Menus</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link contact" href="#contact">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
             </div>
         </div>
-    </nav>
+    </div>
 </div>
 <!-- Hero section -->
 <section class="container overflow-hidden" id="home">
@@ -414,6 +494,86 @@
                        <img class="w-25" src="/public/img/app2.png" alt="">
                    </a>
                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact section -->
+<section id="contact" class="mt-5 mt-md-0 bg-light">
+    <div class="container">
+        <div class="row mb-5 align-items-center justify-content-center">
+            <div class="col-lg-5">
+                        <p class="text-primary fw-bold mb-0 mt-5">Let's talk</p>
+                        <h4 class="fw-bold">Contact Us</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, <br>
+                            asperiores consequuntur deleniti deserunt dolore earum expedita fugiat fugit impedit ipsa iste modi necessitatibus neque,
+                            <br>
+                            nisi perferendis provident quam ullam vero.
+                        </p>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-lg-2 align-self-end">
+                <div>
+                    <a href="#" class="btn btn-primary">Contact Us Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-9">
+                <hr class="mb-5 mt-0">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-2">
+                <div class="mb-5 mb-md-5 mb-lg-0">
+                        <h4 class="fw-bold mb-3">Foodie</h4>
+                    <a href="" class="text-decoration-none social-link">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="" class="text-decoration-none social-link">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="" class="text-decoration-none social-link">
+                        <i class="bi bi-google"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-6 col-md-4">
+                        <div class="content mb-md-0 mb-5">
+                            <p class="fw-bold">Services</p>
+                            <div class="d-flex flex-column">
+                                <a href="" class="text-decoration-none text-black-50 content-link">Delivery</a>
+                                <a href="" class="text-decoration-none text-black-50 content-link">Fast Food</a>
+                                <a href="" class="text-decoration-none text-black-50 content-link">Pricing</a>
+                                <a href="" class="text-decoration-none text-black-50 content-link">Reserve Your Spot</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <div class="content mb-md-0 mb-5">
+                            <p class="fw-bold">Pages</p>
+                            <div class="d-flex flex-column">
+                                <a href="" class="text-decoration-none text-black-50 content-link">Event</a>
+                                <a href="" class="text-decoration-none text-black-50 content-link">Contact Us</a>
+                                <a href="" class="text-decoration-none text-black-50 content-link">Privacy Policy</a>
+                                <a href="" class="text-decoration-none text-black-50 content-link">Terms Of Services</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 mb-5">
+                        <div class="content mb-md-0 mb-5">
+                            <p class="fw-bold">Information</p>
+                            <div class="d-flex flex-column">
+                                <a href="" class="text-decoration-none text-black-50 content-link">Yangon, Myanmar</a>
+                                <a href="" class="text-decoration-none text-black-50 content-link">example street</a>
+                                <a href="" class="text-decoration-none text-black-50 content-link">09799958239</a>
+                                <a href="" class="text-decoration-none text-black-50 content-link">danielxcott@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
