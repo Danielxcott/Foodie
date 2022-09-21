@@ -8,6 +8,7 @@
     <title>Foodie</title>
 </head>
 <body>
+<!-- Navbar -->
 <div class="container">
     <nav class="navbar navbar-expand-lg bg-white ">
         <div class="container-fluid">
@@ -21,39 +22,40 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-pills ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Services</a>
+                        <a class="nav-link" href="#service">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link ">Menus</a>
+                        <a class="nav-link" href="#menu">Menus</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="contact">Contact</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 </div>
-<section class="container">
+<!-- Hero section -->
+<section class="container" id="home">
     <div class="row justify-content-evenly min-vh-100 align-items-center">
         <div class="col-12 col-md-6 col-lg-5">
             <div id="home-content">
-                <h1 class="mb-4 text-primary">
+                <h1 class="mb-4 fw-bold display-4 text-primary drop">
                     Tasty <span class="element"></span>
                 </h1>
-                <p class="mb-4 text-black-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>
+                <p class="mb-4 text-black-50 drop">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>
                     Alias amet autem blanditiis culpa eveniet exercitationem inventore iure libero maxime minima nam, <br>
                     nesciunt non pariatur, <br>
                     placeat quidem reprehenderit tempora vero voluptatem?
                 </p>
-                <h4 class="mb-4 fw-bold">Join the best food of week!</h4>
-                <div>
+                <h4 class="mb-4 fw-bold drop">Join the best food of week!</h4>
+                <div class="drop">
                     <a href="" class="btn btn-lg  btn-primary">
                         <i class="bi bi-cart"></i>
                     </a>
@@ -66,6 +68,25 @@
         </div>
         <div class="col-12 col-md-6 col-lg-5">
             <img src="public/img/home.png" class="w-100 to-down" alt="">
+        </div>
+    </div>
+</section>
+<!-- About section -->
+<section class="bg-light" id="about">
+    <div class="container">
+        <div class="row min-vh-100 justify-content-evenly align-items-center">
+        <div class="col-12 col-md-6 col-lg-4">
+            <img src="public/img/about.jpg" alt="" class="w-100 shadow to-left">
+        </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <p class="text-primary fw-bold swipe-right">About</p>
+                <h4 class="mt-4 swipe-right">We cook the best tasty food</h4>
+                <p class="text-black-50 mb-4 swipe-right">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>
+                    Amet assumenda atque cupiditate eos exercitationem facilis fugiat illum iusto laborum maiores obcaecati,<br>
+                    quae quaerat qui quo rem sunt tempore, temporibus ut.
+                </p>
+                <a href="" class="btn btn-primary swipe-right">Explorer History</a>
+            </div>
         </div>
     </div>
 </section>
