@@ -55,3 +55,53 @@ let swiperight = {
     opacity: 0,
 };
 ScrollReveal().reveal('.swipe-right',swiperight);
+
+let menuLists = [
+    {
+        id:1,
+        img : "public/img/plate1.png",
+        title:"Barbecue Salad",
+        description : "Special Delicious Dish",
+        price : 22.2,
+        currency : "$"
+    },
+    {
+        id:2,
+        img : "public/img/plate2.png",
+        title:"Salad with fish",
+        description : "Special Delicious Dish",
+        price : 30.5,
+        currency : "$"
+    },
+    {
+        id:3,
+        img : "public/img/plate3.png",
+        title:"Spinach Salad",
+        description : "Special Delicious Dish",
+        price : 50,
+        currency : "$"
+    }
+];
+
+let menuRow = document.querySelector("#menu-row");
+menuLists.forEach(list=>{
+    let div = document.createElement("div");
+    div.classList.add("col-12","col-md-4","col-lg-2");
+    div.innerHTML =
+        `
+         <div class="card align-items-center justify-content-center mb-3" style="height: 350px">
+                <img src="${list.img}" width="130" height="130" alt="">
+                <div class="card-body">
+                <p class="fw-bold">${list.title}</p>
+                    <p class="text-black-50 small">${list.description}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <p class="mb-0">${list.currency} ${list.price}</p>
+                        <button class="btn btn-primary">
+                            <i class="bi bi-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+    menuRow.append(div);
+})
