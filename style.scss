@@ -23,3 +23,10 @@ $border-radius-lg: .75rem;
 .nav-link.active{
   color: #fff !important;
 }
+
+.service{
+  text-align: center;
+  svg {
+    fill: #117b29;
+  }
+}
