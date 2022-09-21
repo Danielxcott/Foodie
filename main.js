@@ -111,7 +111,7 @@ let height = window.innerHeight;
 let nav = document.querySelector(".navbar")
 window.addEventListener("scroll",e=>{
     let currentHeight = e.path[1].pageYOffset;
-    if(currentHeight>height)
+    if(currentHeight>=height)
     {
         nav.classList.add("scroll-nav");
     }else
@@ -130,7 +130,7 @@ new Waypoint({
         let currentNavLink = document.querySelector(`[href="#home"]`);
         currentNavLink.classList.add('active');
     },
-    offset: "10%"
+    offset: "0%"
 });
 
 let sections = ['about','service','menu'];
@@ -143,8 +143,38 @@ sections.forEach(function (section){
             let currentNavLink = document.querySelector(`[href="#${section}"]`);
             currentNavLink.classList.add('active');
         },
-        offset: "0%"
+        offset: "10%"
     })
+})
+new Waypoint({
+    element: document.getElementById('about'),
+    handler: function(direction) {
+        let oldNavLink = document.querySelector(".nav-link.active");
+        oldNavLink.classList.remove("active");
+        let currentNavLink = document.querySelector(`[href="#about"]`);
+        currentNavLink.classList.add('active');
+    },
+    offset: "50px"
+})
+new Waypoint({
+    element: document.getElementById('service'),
+    handler: function(direction) {
+        let oldNavLink = document.querySelector(".nav-link.active");
+        oldNavLink.classList.remove("active");
+        let currentNavLink = document.querySelector(`[href="#service"]`);
+        currentNavLink.classList.add('active');
+    },
+    offset: "88px"
+})
+new Waypoint({
+    element: document.getElementById('menu'),
+    handler: function(direction) {
+        let oldNavLink = document.querySelector(".nav-link.active");
+        oldNavLink.classList.remove("active");
+        let currentNavLink = document.querySelector(`[href="#menu"]`);
+        currentNavLink.classList.add('active');
+    },
+    offset: "-10%"
 })
 new Waypoint({
     element: document.getElementById('contact'),
@@ -152,9 +182,14 @@ new Waypoint({
         let oldNavLink = document.querySelector(".nav-link.active");
         oldNavLink.classList.remove("active");
         let currentNavLink = document.querySelector(`[href="#contact"]`);
-        console.log(currentNavLink)
         currentNavLink.classList.add('active');
     },
-    offset: "70%"
+    offset: "80%"
 })
 
+window.addEventListener("load",_=>{
+    let loader = document.querySelector(".loader-container")
+   setTimeout(_=>{
+       loader.style.display = "none";
+   },2000)
+})
